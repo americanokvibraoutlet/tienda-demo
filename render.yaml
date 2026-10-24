@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: tienda-demo-solo-demo
+    runtime: static
+    staticPublishPath: .
+    buildCommand: ""
+    headers:
+      - path: /*
+        name: Permissions-Policy
+        value: camera=(self)
+      - path: /index.html
+        name: Cache-Control
+        value: no-cache
+      - path: /sw.js
+        name: Cache-Control
+        value: no-cache
